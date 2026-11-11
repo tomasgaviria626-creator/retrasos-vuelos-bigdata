@@ -1,0 +1,6 @@
+.env
+datos_nuevos/*.csv
+datos_procesados/
+archivos_csv/registro_*.csv
+archivos_csv/vuelos_analitica.csv
+__pycache__/
