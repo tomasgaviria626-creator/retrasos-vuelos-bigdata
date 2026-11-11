@@ -1,0 +1,17 @@
+# Datos originales (2,13 GB): se descargan de Kaggle
+*.csv
+!flujo_vuelos/archivos_csv/catalogo_aerolineas.csv
+!flujo_vuelos/archivos_csv/niveles_puntualidad.csv
+
+# Contraseñas y conexiones
+.env
+
+# Salidas que generan los notebooks
+notebooks/salidas_eda/
+notebooks/salidas_contexto/
+notebooks/salidas_dask/
+*.parquet
+
+__pycache__/
+.ipynb_checkpoints/
+dask-scratch-space/
