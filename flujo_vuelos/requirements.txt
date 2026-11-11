@@ -1,0 +1,6 @@
+prefect>=3
+pandas
+numpy
+sqlalchemy>=2
+psycopg2-binary
+python-dotenv

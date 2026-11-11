@@ -1,0 +1,18 @@
+# Conexión de Grafana a la base de AWS. Los valores salen del archivo .env (docker-compose los pasa al contenedor).
+apiVersion: 1
+datasources:
+  - name: AWS vuelos_analitica
+    uid: aws-vuelos
+    type: grafana-postgresql-datasource
+    access: proxy
+    url: ${AWS_HOST}:${AWS_PORT}
+    user: ${AWS_USER}
+    isDefault: true
+    editable: true
+    jsonData:
+      database: ${AWS_DB}
+      sslmode: require
+      postgresVersion: 1600
+      timescaledb: false
+    secureJsonData:
+      password: ${AWS_PASSWORD}

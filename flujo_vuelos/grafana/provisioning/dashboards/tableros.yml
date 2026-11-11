@@ -1,0 +1,9 @@
+# Carga automáticamente los tableros que están en grafana/dashboards
+apiVersion: 1
+providers:
+  - name: tableros-vuelos
+    folder: Vuelos
+    type: file
+    allowUiUpdates: true
+    options:
+      path: /etc/grafana/dashboards

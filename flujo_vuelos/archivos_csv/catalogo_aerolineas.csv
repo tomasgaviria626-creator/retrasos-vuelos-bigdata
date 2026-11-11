@@ -1,0 +1,19 @@
+op_carrier,nombre_aerolinea,tipo_aerolinea,vuela_para
+WN,Southwest Airlines,Bajo costo,Propia
+DL,Delta Air Lines,Tradicional,Propia
+AA,American Airlines,Tradicional,Propia
+UA,United Airlines,Tradicional,Propia
+AS,Alaska Airlines,Tradicional,Propia
+HA,Hawaiian Airlines,Tradicional,Propia
+B6,JetBlue Airways,Bajo costo,Propia
+NK,Spirit Airlines,Bajo costo,Propia
+F9,Frontier Airlines,Bajo costo,Propia
+G4,Allegiant Air,Bajo costo,Propia
+VX,Virgin America,Bajo costo,Propia (integrada a Alaska en 2018)
+OO,SkyWest Airlines,Regional,"Delta, United, American, Alaska"
+EV,ExpressJet Airlines,Regional,"United, Delta, American"
+YX,Republic Airline,Regional,"American, Delta, United"
+MQ,Envoy Air,Regional,American
+OH,PSA Airlines,Regional,American
+9E,Endeavor Air,Regional,Delta
+YV,Mesa Airlines,Regional,"American, United"

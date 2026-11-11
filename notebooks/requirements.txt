@@ -1,0 +1,11 @@
+pandas
+numpy
+matplotlib
+seaborn
+pyarrow
+dask[complete]
+psutil
+holidays
+airportsdata
+meteostat<2
+jupyter

@@ -1,0 +1,45 @@
+# Levanta la base local (PostgreSQL), la interfaz de Prefect y Grafana:  docker compose up -d
+services:
+  postgres-vuelos:
+    image: postgres:16
+    container_name: postgres-vuelos
+    environment:
+      POSTGRES_USER: ${LOCAL_USER}
+      POSTGRES_PASSWORD: ${LOCAL_PASSWORD}
+      POSTGRES_DB: ${LOCAL_DB}
+    ports:
+      - "${LOCAL_PORT}:5432"
+    volumes:
+      - pgdata_vuelos:/var/lib/postgresql/data
+
+  prefect-server:
+    image: prefecthq/prefect:3-latest
+    container_name: prefect-server
+    command: prefect server start --host 0.0.0.0
+    ports:
+      - "4200:4200"
+
+  grafana:
+    image: grafana/grafana:12.0.0
+    container_name: grafana-vuelos
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD:-admin}
+      GF_USERS_DEFAULT_LANGUAGE: es-ES
+      GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH: /etc/grafana/dashboards/tablero_vuelos.json
+      # Grafana lee la base de AWS (solo resultados de la analítica) con los datos del .env
+      AWS_HOST: ${AWS_HOST}
+      AWS_PORT: ${AWS_PORT}
+      AWS_USER: ${AWS_USER}
+      AWS_PASSWORD: ${AWS_PASSWORD}
+      AWS_DB: ${AWS_DB}
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/dashboards:/etc/grafana/dashboards
+      - grafana_datos:/var/lib/grafana
+
+volumes:
+  pgdata_vuelos:
+  grafana_datos:
